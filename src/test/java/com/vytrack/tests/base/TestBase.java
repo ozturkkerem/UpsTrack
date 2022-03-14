@@ -1,20 +1,28 @@
 package com.vytrack.tests.base;
 
-import com.vytrack.pages.DashboardPage;
-import com.vytrack.pages.VytrackLoginPage;
+import com.vytrack.pages.*;
 import com.vytrack.utilities.ConfigurationReader;
 import com.vytrack.utilities.Driver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 public abstract class TestBase {
-   protected VytrackLoginPage loginPage;
+    protected VytrackLoginPage loginPage;
     protected DashboardPage dashboardPage;
+    protected HomePage homePage;
+    protected VehiclesPagePOM vehiclesPagePOM;
+    protected VehicleOdometerPOM vehicleOdometerPOM;
+
     @BeforeMethod
     public void setUp() {
-       // Driver.getDriver().get(ConfigurationReader.getProperty("env1"));
-        loginPage=new VytrackLoginPage();
-        dashboardPage=new DashboardPage();
+        // Driver.getDriver().get(ConfigurationReader.getProperty("env1"));
+        loginPage = new VytrackLoginPage();
+        dashboardPage = new DashboardPage();
+        homePage = new HomePage();
+        vehiclesPagePOM = new VehiclesPagePOM();
+        vehicleOdometerPOM = new VehicleOdometerPOM();
+
+
     }
 
     @AfterMethod
