@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class HomePage {
+
+
     public HomePage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
@@ -56,5 +58,9 @@ public class HomePage {
     //#11.Vehicle contracts
     @FindBy(xpath = "//span[.='Vehicle Contracts' and @class='title title-level-2']")
       public WebElement vehicle_contracts_submodule;
+
+    //#11. calendarEventSubmodule
+    @FindBy (xpath ="//span[.='Calendar Events']")
+    public WebElement calendarEventSubmodule;
 
 }
