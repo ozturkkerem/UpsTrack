@@ -12,7 +12,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import javax.accessibility.AccessibleTable;
 import java.util.Set;
 
 public class BrowserUtils {
@@ -67,7 +66,7 @@ public class BrowserUtils {
     }
 
     //Create hover(WebElement element) method
-    public static void hover(WebElement element) {
+    public static void hover(WebDriver driver, WebElement element) {
         Actions actions = new Actions(Driver.getDriver());
         actions.moveToElement(element).pause(3).perform();
 
